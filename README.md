@@ -1,1 +1,1 @@
-# -Stock-Trading-Simulation-System
+Stock-Trading-Simulation-System
