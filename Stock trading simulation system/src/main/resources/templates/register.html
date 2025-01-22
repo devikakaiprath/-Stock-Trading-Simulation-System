@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Stock Trading Simulation</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+<header>
+    <h1>Stock Trading Simulation</h1>
+    <nav>
+        <ul>
+            <li><a th:href="@{/dashboard}">Dashboard</a></li>
+            <li><a th:href="@{/trade}">Trade</a></li>
+            <li><a th:href="@{/portfolio}">Portfolio</a></li>
+            <li><a th:href="@{/login}">Login</a></li>
+            <li><a th:href="@{/register}">Register</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main id="main-content">
+    <h2>Register</h2>
+    <form th:action="@{/register}" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <button type="submit">Register</button>
+    </form>
+    <p th:if="${param.error}" class="error">Registration failed. Please try again.</p>
+    <p th:if="${param.success}" class="success">Registration successful. You can now login.</p>
+</main>
+
+<footer>
+    <p>&copy; 2024 Stock Trading Simulation</p>
+</footer>
+
+<!-- Include JavaScript files -->
+<script src="/js/app.js"></script>
+<script src="/js/auth.js"></script>
+<script src="/js/portfolio.js"></script>
+<script src="/js/trade.js"></script>
+</body>
+
+</html>
